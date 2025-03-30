@@ -36,7 +36,7 @@ class UserRepositoryImplTest {
 
     @Before
     fun setUp() {
-        MockitoAnnotations.initMocks(this)
+        MockitoAnnotations.openMocks(this)
         userRepository = UserRepositoryImpl(api)
     }
 
