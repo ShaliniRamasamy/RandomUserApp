@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
             MyTheme {
                 KoinAndroidContext {
                     Surface(color = MaterialTheme.colorScheme.background) {
-                        AppNavigations()
+                        AppNavigation()
                     }
                 }
             }

@@ -25,7 +25,7 @@ import com.google.gson.Gson
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppNavigations() {
+fun AppNavigation() {
     val navController: NavHostController = rememberNavController()
 
     Scaffold(
@@ -57,7 +57,7 @@ fun AppNavigations() {
                 val userJson = backStackEntry.arguments?.getString("user")
                 val user = Gson().fromJson(userJson, Result::class.java)
                 if (user != null) {
-                    UserDetail(navController, user = user)
+                    UserDetail(user = user)
                 }
             }
         }

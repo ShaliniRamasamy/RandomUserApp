@@ -6,7 +6,7 @@ import com.example.randomusersapp.network.CallApi
 import retrofit2.Response
 
 @Suppress("UNCHECKED_CAST")
-class UserRepositoryImpl(var api: CallApi): UserRepository {
+class UserRepositoryImpl(private var api: CallApi): UserRepository {
 
     override suspend fun getUserList(results: Int): Response<RandomUsersResponse> {
         val response = try {
