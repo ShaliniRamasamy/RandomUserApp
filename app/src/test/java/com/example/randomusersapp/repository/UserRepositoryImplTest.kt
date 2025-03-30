@@ -40,7 +40,7 @@ class UserRepositoryImplTest {
         userRepository = UserRepositoryImpl(api)
     }
 
-    fun mockRandomUsersResponse(): RandomUsersResponse {
+    private fun mockRandomUsersResponse(): RandomUsersResponse {
         return RandomUsersResponse(
             info = Info(
                 seed = "abc123",
@@ -52,14 +52,14 @@ class UserRepositoryImplTest {
         )
     }
 
-    fun mockResult(): Result {
+    private fun mockResult(): Result {
         return Result(
             cell = "123-456-7890",
             dob = Dob(30, "1990-01-01"),
             email = "test@example.com",
             gender = "male",
             id = Id("SSN", "123-45-6789"),
-            location = Location("123 Main St", coordinates = Coordinates("",""), "New York", "NY", "USA", street = Street("xxxxxx", 230), timezone = Timezone("","")),
+            location = Location("123 Main St", coordinates = Coordinates("",""), "New York", "NY", "USA", street = Street("Street", 230), timezone = Timezone("","")),
             login = Login("username123", "password", "salt", "md5", "sha1", "sha256", ""),
             name = Name("John", "Doe", "Mr"),
             nat = "US",
