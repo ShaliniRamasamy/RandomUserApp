@@ -2,7 +2,6 @@ package com.example.randomusersapp
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -23,8 +22,6 @@ import com.google.gson.Gson
 @Composable
 fun AppNavigation() {
     val navController: NavHostController = rememberNavController()
-    val currentBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentDestination = currentBackStackEntry?.destination?.route ?: "Home"
 
     Scaffold(
         topBar = {
