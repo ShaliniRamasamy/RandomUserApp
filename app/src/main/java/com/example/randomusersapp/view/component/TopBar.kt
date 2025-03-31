@@ -15,7 +15,6 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun TopBar() {
-
     Row(
         modifier = Modifier
             .fillMaxWidth()

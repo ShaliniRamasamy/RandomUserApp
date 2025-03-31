@@ -46,8 +46,12 @@ fun InputScreen(navController: NavHostController) {
             OutlinedTextField(
                 value = text,
                 onValueChange = {
-                    text = it
-                    if (error.isNotEmpty()) error = ""
+//                    text = it
+//                    if (error.isNotEmpty()) error = ""
+                    if (it.all { char -> char.isDigit() }) {
+                        text = it
+                        if (error.isNotEmpty()) error = ""
+                    }
                 },
                 label = { Text("Enter a number") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
@@ -56,7 +60,10 @@ fun InputScreen(navController: NavHostController) {
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = MaterialTheme.colorScheme.background,
                     unfocusedContainerColor = MaterialTheme.colorScheme.background,
-                    focusedTextColor = Color.Black
+                    errorContainerColor = MaterialTheme.colorScheme.background,
+                    focusedTextColor = Color.Black,
+                    errorTextColor = Color.Black,
+                    unfocusedTextColor = Color.Black
                 ),
             )
             if (error.isNotEmpty()) {
@@ -72,9 +79,12 @@ fun InputScreen(navController: NavHostController) {
                     val number = text.toIntOrNull()
                     if (text.isBlank()) {
                         error = "Please enter a number"
-                    } else if (number == 0) {
-                        error = "Invalid number"
-                    } else {
+                    } else if (number == null) {
+                        error = "Invalid input. Please enter a valid number"
+                    } else if (number <= 0 || number > 5000) {
+                        error = "Invalid number. Please enter a number between 1 to 5000"
+                        text = ""
+                    }  else {
                         navController.navigate("users/$number")
                     }
                 },

@@ -2,6 +2,7 @@ package com.example.randomusersapp.view
 
 import android.net.Uri
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -40,6 +41,14 @@ fun UserList(navController: NavHostController, number: Int) {
     LaunchedEffect(usersState.errorMessage) {
         usersState.errorMessage?.let {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    BackHandler {
+        if (usersState.isLoading) {
+            Toast.makeText(context, "Please wait, loading data...", Toast.LENGTH_SHORT).show()
+        } else {
+            navController.popBackStack()
         }
     }
 

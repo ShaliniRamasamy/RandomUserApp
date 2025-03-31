@@ -21,6 +21,7 @@ loggingInterceptor = "4.10.0"
 mockitoCore = "5.7.0"
 mockitoInline = "5.2.0"
 mockitoKotlin = "5.2.0"
+mockwebserver = "4.9.3"
 navigationCompose = "2.8.9"
 navigationRuntimeKtx = "2.8.9"
 retrofit = "2.9.0"
@@ -56,6 +57,7 @@ logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", ver
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlin" }
+mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockwebserver" }
 retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
 
