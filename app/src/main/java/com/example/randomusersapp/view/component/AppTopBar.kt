@@ -11,9 +11,9 @@ import androidx.compose.runtime.Composable
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppTopBar(onBackClick: (() -> Unit)? = null) {
+fun AppTopBar(title: String, onBackClick: (() -> Unit)? = null) {
     TopAppBar(
-        title = { Text(text = "User App") },
+        title = { Text(text = title) },
         navigationIcon = {
             onBackClick?.let {
                 IconButton(onClick = it) {

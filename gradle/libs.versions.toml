@@ -23,7 +23,6 @@ mockitoInline = "5.2.0"
 mockitoKotlin = "5.2.0"
 mockwebserver = "4.9.3"
 navigationCompose = "2.8.9"
-navigationRuntimeKtx = "2.8.9"
 retrofit = "2.9.0"
 truth = "1.1.5"
 
